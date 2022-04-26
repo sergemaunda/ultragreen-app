@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title class="txt-title">
+      Dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!--Introduction-->
+  <!-- <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <h1>Welcome to the UltraGreen App!</h1>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        This is a simple app that allows you to track your water usage.
+      </p>
+      <p>
+        You can add a new entry by clicking the button below.
+      </p>
+    </ion-card-content>
+  </ion-card> -->
+
+  <!--UltraGreen-->
+  <ion-card class="ion-padding">
+    <ion-item lines="none">
+      <ion-label class="ion-text-wrap">
+        <h2>UltraGreen</h2>
+        <p>Real-time Data</p>
+      </ion-label>
+      <ion-spinner *ngIf="isScanning" color="medium"></ion-spinner>
+      <ion-chip *ngIf="!isScanning" [color]="connectivity.color" slot="end">
+        <ion-label>{{connectivity.status}}</ion-label>
+      </ion-chip>
+    </ion-item>
+
+    <!--Temperature-->
+    <ion-item lines="none">
+      <ion-label>
+        <p class="txt-quantity">TEMPERATURE</p>
+        <h2>{{tempValue}}</h2>
+      </ion-label>
+      <ion-icon color="dark" name="thermometer-outline" slot="end"></ion-icon>
+    </ion-item>
+
+    <!--HUMIDITY-->
+    <ion-item lines="none">
+      <ion-label>
+        <p class="txt-quantity">HUMIDITY</p>
+        <h2>--</h2>
+      </ion-label>
+      <ion-icon color="dark" name="water-outline" slot="end"></ion-icon>
+    </ion-item>
+
+
+    <ion-item lines="none">
+      <ion-icon color="dark" name="alert-circle-outline" slot="start"></ion-icon>
+      <ion-label class="ion-text-wrap txt-outputMsg">{{outputMessage}}</ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="connectToDevice()">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!--Analytics-->
+  <!-- <ion-item lines="none">
+    <ion-icon name="analytics-outline"></ion-icon>
+    <ion-title>Analytics</ion-title> -->
+
+    <!-- <ion-input value="24 April 2022" slot="end" id="open-date-input-2"></ion-input>
+    <ion-popover trigger="open-date-input-2" show-backdrop="false">
+      <ng-template>
+        <ion-datetime
+          #popoverDatetime2
+          presentation="date"
+        ></ion-datetime>
+      </ng-template>
+    </ion-popover> -->
+  <!-- </ion-item> -->
+
+  <!--Temperature Chart-->
+  <!-- <ion-card>
+    <ion-card-content>
+      <canvas #tempCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+    </ion-card-content>
+  </ion-card><br> -->
+
+  <!--Humidity Chart-->
+  <!-- <ion-card>
+    <ion-card-content>
+      <canvas #humCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>

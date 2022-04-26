@@ -1,0 +1,7 @@
+{
+  "name": "UltraGreen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
