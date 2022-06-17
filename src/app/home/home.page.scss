@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+.txt {
+  font-weight: 500;
+}
+
+.img {
+  width: 50% !important;
+}
+
 .txt-quantity {
   font-weight: bold;
   font-size: x-small;
@@ -13,4 +21,10 @@
 
 .txt-outputMsg {
   font-size: small;
+}
+
+.container-devices {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 50% 50%;
 }
